@@ -7,7 +7,7 @@ st.set_page_config(page_title="Random Forest Prediction", layout="centered")
 st.title("🧠 Random Forest Classifier Test App")
 
 # Load model
-model = joblib.load(r'/home/intellect-1001/Desktop/Data_Scientist-/Day 4 FN-20251212T063722Z-1-001/Day 4 FN/vin3.project/ans.pkl')
+model = joblib.load("ans.pkl") 
 
 st.subheader("Enter Employee Details")
 
