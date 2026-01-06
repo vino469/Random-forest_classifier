@@ -1,13 +1,18 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import os
 
 # Page config
 st.set_page_config(page_title="Random Forest Prediction", layout="centered")
 st.title("🧠 Random Forest Classifier Test App")
 
+# ---- Debug (remove later if you want) ----
+st.write("Running from:", os.getcwd())
+st.write("Files here:", os.listdir())
+
 # Load model
-model = joblib.load("ans.pkl") 
+model = joblib.load("ans.pkl")
 
 st.subheader("Enter Employee Details")
 
@@ -22,7 +27,7 @@ department = st.selectbox(
 
 years_exp = st.number_input("Years of Experience", min_value=0, max_value=40, value=5)
 
-# Encode department (MUST match training)
+# Encode department (same as training)
 dept_mapping = {"HR": 0, "IT": 1, "Sales": 2}
 department_encoded = dept_mapping[department]
 
